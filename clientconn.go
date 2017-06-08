@@ -506,6 +506,11 @@ type ClientConn struct {
 	mkp keepalive.ClientParameters
 }
 
+// get target for just clientconn alone
+func (cc *ClientConn) GetTarget() string{
+    return cc.target
+}
+
 // lbWatcher watches the Notify channel of the balancer in cc and manages
 // connections accordingly.  If doneChan is not nil, it is closed after the
 // first successfull connection is made.
